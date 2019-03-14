@@ -1,0 +1,62 @@
+
+ ifconfig 
+ netstat -napt
+ route -n
+ cat /etc/network/interfaces
+ ifdown eth0
+ ifup eth0
+
+  ssh edmilton@200.137.197.69 -p 40256
+  ping 8.8.8.8
+  ping www.google.com
+  ping 192.168.40.254
+  ping 200.137.197.69
+  cat /etc/issue
+  /etc/init.d/networking restart
+  ssh edmilton@200.137.197.69 -p 40256
+  iptables -n -L -v
+  iptables -F
+  nmap -PN 192.168.40.242
+  nmap -PN 192.168.40.18
+  nmap  -sP 192.168.40.18 -p 40256
+  nmap  192.168.40.18 -p 40256
+  nmap  200.137.197.69 -p 40256
+  ssh edmilton@192.168.40.18
+  nano /etc/network/interfaces
+  ping 192.168.40.254
+  route -n
+  ssh edmilton@192.168.40.18
+  137563cc
+  sudo ip route add 10.16.0.0/16 dev enp63s0 ou usar o eth0()
+
+
+
+#################################################################
+Arquivo de  configuração eth0 static ou dhcp
+root@pi-7904:/home/pi/Desktop# cat /etc/network/interfaces
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+auto lo
+iface lo inet loopback
+
+auto eth0
+#allow-hotplug eth0
+iface eth0 inet static 
+address 10.16.79.4
+broadcast 10.16.255.255
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+allow-hotplug wlan1
+iface wlan1 inet manual
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+ 
+#################################################################

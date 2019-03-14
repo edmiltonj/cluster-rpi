@@ -1,0 +1,30 @@
+As ferramentas utilizadas no ambiente são apenas sugestões. 
+Em trabalhos futuros exploraremos novas opções.
+
+Para a instalação, necessita do acesso como ADM através do comando:
+
+$sudo su
+
+
+Terminator: Integrador de Bash Linux para SO com interface gráfica completa;
+Instalar:
+
+$apt-get install terminator
+
+Executar: 
+
+$terminator
+
+
+Docker: Plataforma que permite manipular Contêineres;
+Instalar:
+
+$ curl -sSL https://get.docker.com | sh
+
+
+Executar: $docker --version
+
+Para saber mais das opções do Docker, ver arquivo Dicas para usar o Docker;
+
+
+

@@ -1,0 +1,43 @@
+Instalação
+
+$curl -sSL https://get.docker.com | sh
+
+Check Instalação
+
+$docker --version
+
+
+
+Comandos diversos
+
+$docker images
+
+$docker rmi tag | id_imagem
+
+$docker rmi $(docker images -q)
+
+$docker ps -a
+
+$docker rm  $(docker ps -a -q)
+
+Usando docker file
+
+$docker build -t tag/tag:version .
+
+Executando a imagem criada
+
+$docker run -it tag/tag:version bash
+
+
+
+Docker swarm:
+
+$docker node ls
+
+$docker inspect $apelido
+
+$docker leave
+
+$docker swarm init --advertise-addr $ipserver
+
+$docker swarm init --force-new-cluster --advertise-addr $ipserver

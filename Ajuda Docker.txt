@@ -1,0 +1,16 @@
+Comandos diversos
+docker images
+docker rmi tag | id_imagem
+docker rmi $(docker images -q)
+docker ps -a
+docker rm  $(docker ps -a -q)
+
+
+
+Usando docker file
+
+docker build -t tag/tag:version .
+
+Rodando a imagem criada
+
+docker run -it tag/tag:version bash

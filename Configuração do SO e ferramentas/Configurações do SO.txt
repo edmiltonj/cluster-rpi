@@ -1,0 +1,62 @@
+Guia para alteração dos Hostnames, modelo de Teclado,  Ip's e acesso SSH
+Algumas alterações necessitam de permissão de ADM para serem executadas.
+Utilize o comando abaixo para possuir acesso e informe a senha de ADM
+	$sudo su
+
+Para manter o sistema atualizado, utiliza-se 2 comandos:
+
+$apt-get update
+$apt-get upgrade
+
+Recomenda-se executar esses dois comandos antes de prosseguir com as demais configurações;
+
+Hostname:
+
+$nano /etc/hostname
+
+Editar o conteúdo para o desejado;
+
+Configuração de Ip fixo:
+
+Editar o arquivo de interfaces:
+
+$nano /etc/network/interfaces
+
+Encontrar a interface eth0 e alterar para a seguinte maneira:
+	auto eth0
+	iface eth0 inet static
+	address 10.0.00.01
+	broadcast 10.0.225.255
+
+Altere o address de acordo com o desejado;
+Após as alterações, é necessário reiniciar a interface de rede
+
+$/etc/init.d/networking restart
+
+Caso deseje utilizar o Wi-Fi, pode-se adicionar manual adcionando ao arquivo de interfaces:
+
+	network={
+        	ssid="NOME_DA_REDE"
+        	psk="SENHA_DE_ACESSO"
+	}
+
+Pode-se ser necessário utilizar os comandos abaixo para que as atualizações entrem em vigência:
+
+$ifdown eth0
+$ifup eth0
+
+Para as demais configurações, pode-se utilizar o comando:
+
+$raspi-config
+
+Será aberto um menu, e poderá alterar algumas opções do SO;
+
+Se houver a necessidade, pode-se alterar a configuração do teclado, 
+a lingua padrão do SO e a alteração do hostname pode ser feita também;
+
+Através desse metódo, precisa ser habilitado o acesso SSH através do menu apresentado;
+
+
+
+
+

@@ -1,0 +1,13 @@
+Baixar a imagem deseja no site:
+
+https://www.raspberrypi.org/downloads/raspbian/
+
+
+Download e instalar a ferramenta Etcher.
+
+Download através do site:
+https://etcher.io/
+
+Conectar SD card;
+Selecionar a imagem e clicar em "FLASH" na ferramenta;
+
